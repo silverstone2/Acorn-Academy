@@ -74,64 +74,31 @@
 
 * table(표) 형식 정보를 출력하려고 할 시에는 약식과 정석이 존재.
 * 약식
--> ex) <tr><!--table row(행)-->
-            <th>번호</th><!--Table head(테이블의 주제 적을 때는 th에 작성)-->
-            <th>이름</th>
-            <th>주소</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>김구라</td>
-            <td>노량진</td>
-        </tr>
-        
-* table 요소들을 사용한 정석 
--> ex) <table border="1">
-        <caption>회원 목록</caption><!--표의 제목은 caption에 명시해주면 됨-->
-        <colgroup> <!--column의 폭을 조절-->
-            <col width="100">
-            <col width="200">
-            <col width="300">
-        </colgroup>
-        <!-- table의 자식 요소로는 thead, tbody, tfoot가 올 수 있다.-->
-        <thead>
-            <tr>
-                <th>번호</th>
-                <th>이름</th>
-                <th>주소</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>김구라</td>
-                <td>노량진</td>
-            </tr>
-            
+![image](https://user-images.githubusercontent.com/107795925/176635429-e25e40f9-7483-476a-a6bf-641898ff7be6.png)
+
+* table 요소들을 사용한 정석
+![image](https://user-images.githubusercontent.com/107795925/176635620-c3ef7644-a1fe-4cc1-a769-26f85909bb10.png)
             
 * table border="" -> 표의 테두리선 굵기를 지정하는 것이다.
 * 표의 제목은 caption에 명시해주면 됨.
-* <colgroup> 은 column의 폭을 조절하는 함수로 내부에 width나 height를 설정해주면 됨.
+* "<colgroup>" 은 column의 폭을 조절하는 함수로 내부에 width나 height를 설정해주면 됨.
 * table의 자식 요소로는 thead, tbody, tfoot가 올 수 있다.
 
 * tfoot : 최종으로 중요한 정보를 먼저 읽을 수 있도록 위로 올려주는 역할을 하는게 tfoot(tbody의 내용을 skip할 수 있음)
 -> 시각적으로는 밑에 나오지만 body보다 먼저 읽어줌.
 
 * column이나 row를 합칠 시에는 colspan OR rowspan 함수를 사용하면 됨.
-사용방식 ex)
-<td colspan="2">1</td><!--colspan="" : 합체할 칼럼의 갯수를 명시-->
-            <!-- <td>2</td>-->  <!--ctrl+/는 주석처리 -->
-            
+![image](https://user-images.githubusercontent.com/107795925/176635714-9169cda4-7d10-481a-abe0-33309f15e98e.png)
             
             
             
 -------------------------------------------------------------------------------------------------------------------------------------------
 * 참고 사항
 
-1em = 16px
-block-start = top
-block-end = bottom
+- 1em = 16px
+- block-start = top
+- block-end = bottom
 
-body와 div는 부모와 자식 관계 / body와 img는 자손관계(단, img는 div와 부모자식관계여야 성립이 됨
+- body와 div는 부모와 자식 관계 / body와 img는 자손관계(단, img는 div와 부모자식관계여야 성립이 됨
 
-display에서 block<-> inline 서로 상반되는 개념
+- display에서 block<-> inline 서로 상반되는 개념
