@@ -173,3 +173,82 @@ anchor에서 속성값 부여할 때 #을 붙이면 id와 연결된다!
 ![image](https://user-images.githubusercontent.com/107795925/176860736-6d563e3c-4557-4f77-b32b-9a188d5fedde.png)
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+
+##### GIT & GITHUB
+            
+git-scm.com 들어가서 git 설치<br>
+설치 후 명령 프롬포트 실행<br>
+명령 프롬포트에서 c:\로 디레토리 변경 후 git 입력해서 설치 제대로 됐는지 확인<br>
+            
+untracked file은 아직 사진이 찍히지 않았다는 뜻<br>
+
+commit 하면  working tree가 clean하다고 나옴<br>
+
+git log하면 commit 내역 나옴(commit의 앞 7자리가 대표 일련번호)<br>
+
+git add . 은 모든 변경사항을 다올리겠다는 얘기<br>
+화면 높이 낮을 때는 엔터누르면 내려가고 q누르면 exit됨<br>
+
+git reset --hard HEAD~ => 잘못쓴거 제거하는거(~모양은 몇단계를 내릴지 정하는 거임)<br>
+
+
+HEAD는 커서다<br>
+
+branch pointer = master<br>
+
+
+이력이 추가될때 마다 master & head가 수정된 걸로 동시에 올라감(아래 그림처럼 실행이 됨)<br>
+branch pointer는 여러개 생성이 가능(헤드만 옮기는 것으로 해결 가능)<br>
+
+
+
+index <- master <- head<br>
+
+            
+v1 < master < head<br>
+index<br>
+
+v2 < master < head<br>
+v1<br>
+index <br>
+
+
+
+
+
+다시 복구 시킬때는 로그 확인후에 해당 식별번호나 id명을 입력시켜줘야함<br>
+
+로그 확인  : git reflog<br>
+복구 명령어 : git reset --hard id명(HEAD@{2}) || git reset --hard 식별번호<br>
+
+폴더 만들고 먼저 git init해도 됨.<br>
+
+
+안전한 공간에서 실험을 하는 방법 : branch를 하나 더 만드는 방법(데모버전으로 실험하는 것) 아래 상황 참고<br>
+
+              lab1 ->  v2 < master < head           이후 헤드(커서)를 lab쪽으로 올리고(얹히고) 성공하면 commit 후에 master에 반영<br>
+                       v1<br>
+                     index <br>
+
+commit의 결과는 이렇게 됨.<br>
+
+ head  -> lab1 ->  v3<br>
+                   v2 < master <br>
+                   v1<br>
+                   index <br>
+
+
+
+
+branch 만드는 방법 <br>
+* git branch 하고 엔터 -> branch 목록이 보여짐<br>
+* git branch lab1하고 엔터 -> lab1 branch 생성 (*가 있는 것은 해당 branch에 커서가 있는 거임)<br>
+커서를 움직이는 명령어 : checkout<br>
+* git checkout lab1 -> branch를 lab1으로 이동시킴<br>
+
+
+만약 성공해서 master의 포인트를 올려서 하고 싶다면?<br>
+merge 명령어 사용<br>
+git merge lab1 엔터 => 병합이 되면서 master가 lab1가 병합됨<br>
+
+만약 실험중에 master에서 버그가 생겨서 양갈래로 갈려진다면 그 위에단에 lab1이랑 합치면 됨,<br>
