@@ -283,6 +283,12 @@ lab1에서의 실험을 master로 합병시킬때는 merge 명령어 사용(mast
 ![branch 갈라졌을 때](https://user-images.githubusercontent.com/107795925/177078205-28307577-df84-47a4-8586-ceba0ab07157.PNG)
 
 ![충돌(conflict 발생) 화면](https://user-images.githubusercontent.com/107795925/177078219-78a4dec7-3597-49d0-8d42-9c922d0b0023.PNG)
+
+
+
+
+
+
             
 * 그냥 merge를 할 경우에는 conflict라는 충돌메세지가 나타남(에러는 아님)<br>
 ==== / >>>> 이런 이상한 기호는 모두 지운 후에 정리한다.<br>
@@ -307,22 +313,94 @@ new generate - 비밀번호 입력 - note 알아서 적고 Expiration은 no Expi
 그리고 밑에 repo 체크(권한은 다 체크하고 싶으면 다 체크해도 됨) 그리고 generate<br>
 토큰 나오면 이 토큰을 저장해야함 한번에 저장해야함!<br>
 
-* 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
+* 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
 
 git push -u origin main 치면 창이 하나 뜸 그때 토큰 누르고 아까 발급받은 토큰 입력<br>
 토큰 정보가 맞으면 push가 진행됨.<br>
 윈도우 검색 - 자격증명 관리자 - window뭐시기 자격 보면 github에 대한 자격증명있고 암호 다 젖아되어 있어서 다음에 자동으로 가능함
 
 
+git remote -v : 저장된 목록 확인(연동된)
+
+origin/master는 master보다 하나 더 ahead 되어 있다. origin/master가 master보다 하나 더 올라와 있다는 뜻.
+local에는 원격저장소를 tracking하는 branch가 있다.
+local과 remote가 맞춰지려면 두번 푸시를 진행해야한다.
+'Your branch is up to date'문구가 나오면 끝났다는거임
+
+최초에 add commit하고나서 하면 push를 진행하면 'Your branch is ahead of 'origin/master' by 1 commit'이라는 문구가 뜸
+이러면 한번더 push를 진행해주면 된다.[스샷 push과정 참조]
+
+집에서 할 때는 git에 저장되어 있는 상태 그대로 clone을 해줘야함. clone의 경우는 최초에 한번만 해주면 됨.
+단순히 파일만 가져오는 것이 아니라 브랜치/커밋 등 모든 상태를 다 끌고 올 수가 있음.
 
 
+push 코드 순서<br>
+init-add-commit-remote add origin 주소-push -u origin.aster-remote -v-add-commit-status -> ahead 확인-origin master-status<br>
+->up to date 확인-add-commit-status ahead-origin master-push-uptodate 확인
+
+![push과정](https://user-images.githubusercontent.com/107795925/177121227-61fb7be3-a782-45e4-a8cf-f968a9a6041a.PNG)
+
+![push1](https://user-images.githubusercontent.com/107795925/177121351-c9fc62f9-28e8-4665-9218-a6d6a139eeae.PNG)
+
+![push2](https://user-images.githubusercontent.com/107795925/177121362-95c7b1d9-bcb9-4d45-9c8f-a50107753e1a.PNG)
+
+![push3](https://user-images.githubusercontent.com/107795925/177121378-981511ae-4c6a-4aa4-bf52-1ef41d537979.PNG)
+
+![push4](https://user-images.githubusercontent.com/107795925/177121392-17e61d5d-705b-4074-9c20-eeb79d52d6bc.PNG)
+
+clone하는 과정 : git clone repository주소
+-> 저장소의 이름대로 폴더가 복제가 됨(단지 폴더 자체만 복사될뿐임 그러므로 git bash를 안쪽으로 들어가줘야함)
+cd 폴더명 입력하고 이후 git status 하면 Your branch is up to date with 'origin/master'. 요러한 문구가 나옴.
+이후부터는 commit을 그냥 내려받기만 하면 됨 -> 이는 fetch라고 부름.
+
+![clone 구조](https://user-images.githubusercontent.com/107795925/177121408-905f36af-4b4a-415c-b42b-f44264cee2c5.PNG)
+
+![clone1](https://user-images.githubusercontent.com/107795925/177121431-c2dcc114-867b-4f20-8d17-21a7e95b3efe.PNG)
+
+fetch를 진행하면 오리진 마스터가 마스터보다 어헤드가 됨. 그러면 merge를 통해서 합병시켜버리면 됨
+원격저장소에서 가장 최신으로 받는 건 fetch+merge 방법 / 원격저장소로 보내는 건 push
+
+fetch진행방법 : git fetch origin
+이후 git status에서 보면 어헤드되어있음. 그래서 git merge origin/master로 merge를 진행해준다.
+
+![Fetch를 진행했을 때의 구조](https://user-images.githubusercontent.com/107795925/177121464-cb11310f-57ff-4e46-a7b9-742f3f1fdfe8.PNG)
+
+똑같은 곳을 수정 안하면 자동 머지가 됨.
+
+![fetch 이후 merge진행하면 master가 제일 위로 올라옴](https://user-images.githubusercontent.com/107795925/177121527-83d16afe-2410-483a-9e42-2d882c3308f6.PNG)
 
 
+그러면 파란 글자가 써져있는 글이 뜨는데 이건 bash 편집기 이고
+뜨면 :wq쓰고 엔터하면 됨. 그러면 merge가 됨.
+
+![최종구조(fetch 후 merge)](https://user-images.githubusercontent.com/107795925/177121487-12e1d833-f070-4681-a733-768acc1320af.PNG)
 
 
+---------------------------------------------------------------------------------------------------------
+
+### javascript
+* head와 body에 있는 script 영역은 페이지 로딩시점에 입력이 됨.<br>
+페이지 검사-console에서의 javascript는 입력하고 엔터를 누르는 시점에 입력이 됨.<br>
+문자의 경우는 '나 "로 감싸야 입력이 됨.
+* javascript는 head의 안쪽이나 body의 안쪽에서 영역을 생성할 수 있음.
+* javascript에서의 변수 -> 검사-console에서 기능 사용 가능(단, vscode에서는 사용 x)
+* 변수를 만들때는 미리 약속된 예약어 let을 사용한다.<br>
+let 다음에는 변수의 이름을 정한다.<br>
+'=' 의 우측에 있는 값이 = 의 좌측에 들어간다(대입된다)<br>
+한줄의 끝에는 ;을 작성한다.<br>
+
+* 변수를 이용한 연산을 한 그 위치는 결과값으로 나타난다.
+
+*  숫자 1 옆에 있는 `로도 문자열을 받을 수 있다! `는 back tick이라고 칭한다. back tick을 이용하면 여러줄의 문자열을 편리학 작성할 수 있다.
+
+* 연산을 할 때 값이 들어 있는 변수명으로 연산을 할 수도 있다.
 
 
+* 참과 거짓을 나타낼 때 사용하는 boolean type<br>
+boolean type 데이터가 들어가는 변수의 이름을 대화식으로 지으면 가독성이 좋다. (isXXX, canXXX)
 
-
+* 나의 변수명으로 여러개의 값을 한번에 관리 가능하면 좋겠다라는 생각이 들음<br>
+특정키값으로 여러값을 한번에 저장하는 type ex) { key:value, key2:value2, ,,,,,,}<br>
+페이지 - 검사 - console에서 확인하는 명령어는 변수명.key ex)mem1.num , mem1.name ,,,
 
 
