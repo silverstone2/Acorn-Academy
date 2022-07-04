@@ -253,4 +253,59 @@ git merge lab1 엔터 => 병합이 되면서 master가 lab1가 병합됨<br>
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-20220704
+### 20220704
+git gui 누르면 gui를 조작할 수 있는 창이 뜸(gui사용시간동안은 bash에서 명령어 사용 불가)<br>
+repository에서 visualize all branch history를 클릭하면 현재 상태와 히스토리가 뜸<br>
+git gui & -> git bash 말고 새로운 프로세스에서 gui를 실행한다는 뜻(독립적으로 하기 때문에 bash에서 명령어 사용 가능)<br>
+-> 즉, 독릭접이 프로세스를 사용하겠다는 말<br>
+
+커서를 바꾸면 git gui에서 진한 글씨로 표시됨.<br>
+
+lab1에서의 실험을 master로 합병시킬때는 merge 명령어 사용(master에서 변경사항 없을 때는 쉽게 merge 가능)<br>
+-> 이러한 방식을 fast-foward 방식이라고 함<br>
+
+삭제 방법 : git branch -d lab1(lab1 branch포인트를 삭제하는 명령어)<br>
+
+중간에 branch가 갈라졌을 때는 병합을 시킬려면 master로 이동한다<br>
+충돌이 날 경우에는 충돌해결-add-commit 하면 됨.<br>
+
+* 그냥 merge를 할 경우에는 conflict라는 충돌메세지가 나타남(에러는 아님)<br>
+==== / >>>> 이런 이상한 기호는 모두 지운 후에 정리한다.<br>
+
+---------------------------------------------------------------------------------------------------------
+
+
+* git bash 로컬저장소의 파일들을 github 원격 저장소에 원격저장하는 방법<br>
+- 공유시트에 주소 다 나와있음.
+
+* git remote add origin https://github.com/silverstone2/my_repo.git에서 origin은 이름을 의미함
+위의 명령어를 git bash에 치고 엔터<br>
+이후 git remote -v를 쳐서 등록한다 그러면 두개의 주소가 나오는데 등록이 정상적으로 된거임.<br>
+* git push -u origin main(main은 branch명을 적으면 됨) 바로 push 불가능
+계정과 비밀번호만으로는 불가하고 인증키(토큰)을 발급받아야함.<br>
+한번 발급 받으면 저장을 해놔야함(잃어버리면 삭제하고 다시 재발급 받아야함.)<br>
+
+깃헙 본인계정 - settings - developer settings - personal access tokens를 발급받아야함<br>
+new generate - 비밀번호 입력 - note 알아서 적고 Expiration은 no Expiration으로 설정<br>
+그리고 밑에 repo 체크(권한은 다 체크하고 싶으면 다 체크해도 됨) 그리고 generate<br>
+토큰 나오면 이 토큰을 저장해야함 한번에 저장해야함!<br>
+
+* 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
+
+git push -u origin main 치면 창이 하나 뜸 그때 토큰 누르고 아까 발급받은 토큰 입력<br>
+토큰 정보가 맞으면 push가 진행됨.<br>
+윈도우 검색 - 자격증명 관리자 - window뭐시기 자격 보면 github에 대한 자격증명있고 암호 다 젖아되어 있어서 다음에 자동으로 가능함
+
+
+
+
+
+
+
+
+
+
+
+
+
+
