@@ -254,6 +254,9 @@ git merge lab1 엔터 => 병합이 되면서 master가 lab1가 병합됨<br>
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 ### 20220704
+            
+![git의 구조](https://user-images.githubusercontent.com/107795925/177078245-06aecd7b-14ef-45a2-904a-3af7d6be2050.PNG)
+            
 git gui 누르면 gui를 조작할 수 있는 창이 뜸(gui사용시간동안은 bash에서 명령어 사용 불가)<br>
 repository에서 visualize all branch history를 클릭하면 현재 상태와 히스토리가 뜸<br>
 git gui & -> git bash 말고 새로운 프로세스에서 gui를 실행한다는 뜻(독립적으로 하기 때문에 bash에서 명령어 사용 가능)<br>
@@ -263,14 +266,28 @@ git gui & -> git bash 말고 새로운 프로세스에서 gui를 실행한다는
 
 lab1에서의 실험을 master로 합병시킬때는 merge 명령어 사용(master에서 변경사항 없을 때는 쉽게 merge 가능)<br>
 -> 이러한 방식을 fast-foward 방식이라고 함<br>
+            
+![fast-foward 방식](https://user-images.githubusercontent.com/107795925/177078147-69568712-6e09-4d75-97e4-f280769341bc.PNG)
 
+![fast-foward 방식 결과](https://user-images.githubusercontent.com/107795925/177078165-85e33694-fe8f-4c64-a23d-e9dcfa86ab18.PNG)
+            
 삭제 방법 : git branch -d lab1(lab1 branch포인트를 삭제하는 명령어)<br>
+            
+![branch 포인터 삭제 방법](https://user-images.githubusercontent.com/107795925/177078178-667a0bee-82f9-40c6-8a54-a293431cb811.PNG)
+            
+![branch 포인터 삭제 결과](https://user-images.githubusercontent.com/107795925/177078184-f359cc58-46df-412c-95fb-053c2e0e46e3.PNG)
 
 중간에 branch가 갈라졌을 때는 병합을 시킬려면 master로 이동한다<br>
 충돌이 날 경우에는 충돌해결-add-commit 하면 됨.<br>
 
+![branch 갈라졌을 때](https://user-images.githubusercontent.com/107795925/177078205-28307577-df84-47a4-8586-ceba0ab07157.PNG)
+
+![충돌(conflict 발생) 화면](https://user-images.githubusercontent.com/107795925/177078219-78a4dec7-3597-49d0-8d42-9c922d0b0023.PNG)
+            
 * 그냥 merge를 할 경우에는 conflict라는 충돌메세지가 나타남(에러는 아님)<br>
 ==== / >>>> 이런 이상한 기호는 모두 지운 후에 정리한다.<br>
+            
+![갈라졌을 때 최종 merge 결과](https://user-images.githubusercontent.com/107795925/177078226-669e93ce-c428-40f3-83ad-a67b11316b56.PNG)
 
 ---------------------------------------------------------------------------------------------------------
 
