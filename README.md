@@ -481,4 +481,16 @@ insert는 i를 누르면 나타났다가 사라지며 화면상 '#'으로 시작
 
 위의 사진에서 보는 12개의 구성요소는 heap에 각각의 문서 object를 생성한다. 만일 개발자가 필요하다가ㅗ 하면 저 문서 object에 접근할 수 있게 허용해준다.<br>
 문서의 참조값을 얻어오는 방법 : 웹페이지 - 검사 - console - document.querySelectorAll(바꿀요소)[몇번째순서].바꿀내용
+            
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+            
+0706 오후
+
+![example1](https://user-images.githubusercontent.com/107795925/177512869-434862a7-f608-47a7-92b1-ef73ba9c2b20.PNG)
+
+![example2](https://user-images.githubusercontent.com/107795925/177512875-9f96021f-9e61-42cc-8095-0dc37863256f.PNG)
+
+![example3](https://user-images.githubusercontent.com/107795925/177512889-e6b54732-b70a-4cda-b1e8-8f8a86f06eff.PNG)
+
+
 
