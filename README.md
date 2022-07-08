@@ -493,4 +493,81 @@ insert는 i를 누르면 나타났다가 사라지며 화면상 '#'으로 시작
 ![example3](https://user-images.githubusercontent.com/107795925/177512889-e6b54732-b70a-4cda-b1e8-8f8a86f06eff.PNG)
 
 
+------------------------------------------------------------------------------------------------
 
+### 20220707
+
+* event part
+### 이벤트 처리를 onXXX="" 속성을 사용해서 처리하면 global 변수(함수)가 필요하다. global 변수(함수)를 많이 만드는 것은 바람직하지 않다.(중요@@@@@@@@@@@@@)
+- onclick, onmouse와 같은 명령어를 사용할때는 global영역에 변수가 선언되어 있어야 한다.
+
+![image](https://user-images.githubusercontent.com/107795925/177687205-7e79ae57-5abf-43a7-8f32-bcb506eb7931.png)
+
+```html
+            document.querySelector("#myBtn").addEventListener("click",function(){
+                        document.querySelector("#console").innerText = "앗 버튼을 눌렀네요?";
+            });
+```
+
+- addEventListener() 함수는 2개의 값은 전달함. 앞의 값은 string type(이벤트명)을 전달하고<br>
+뒤의 값은 function type(callback function)을 전달 [callback 함수는 나중에 자동으로 호출되는 함수를 의미함.]<br>
+javascript는 함수를 호출하면서 함수 자체를 전달하는 기능이 있음(함수도 heap영역에 만들어지는 data이기 때문)
+
+
+* css는 내부와 인라인으로 구분된다.
+
+![image](https://user-images.githubusercontent.com/107795925/177687357-c44431ba-e990-4c8e-b020-3b0cdc4d9e5c.png)
+
+
+* css를 적용할 요소에 style 속성을 이용해서 직접 css를 작성할 수도 있다.<br>
+이러한 css를 인라인 css라고 한다. <br>
+인라인 css는 내부 css보다 우선시 된다.(우선시 된다라고 함은 내부 css를 override할 수 있다는 의미)
+
+![image](https://user-images.githubusercontent.com/107795925/177687435-4aea7eee-c46b-4196-8b50-53375191c654.png)
+
+
+--------------------------------------------------
+0707 오후
+* git에서 파일 지울때는 git status 확인 후  git restore . 입력 이후 git clean fd 입력하면 파일들 사라짐
+
+![image](https://user-images.githubusercontent.com/107795925/177735548-498f054c-893e-414e-8e67-f2d9a4df9742.png)
+
+- javascript에서는 인라인 요소를 수정할 때css처럼 background-color와 같은 명령프롬프트를 사용불가(javascript에서는 -를 산술연산자로 인식하기 때문)<br>
+대신 javascript에서는 backgroundColor와 같이 대문자를 포함해서 적용시킬 수 있다.
+
+- css영역의 style에서 대상의 움직임에 관한 설정을 하고 싶을 때는 transition 사용한다. 이는 움직임에 대한 시간적인 변화를 줄때 사용<br>
+linear은 일정한 비율을 의미함.<br>
+ease-out은 도착을 부드럽게 함 / ease-in 출발을 부드럽게 함 / 둘다는 ease-in-out
+
+- 코드 작성법에 따른 분류<br?
+moveRightBtn을 move_right_btn처럼 작성하는 것을 snake case(_사용)<br>
+moveRightBtn은 camel case(대문자사용)<br>
+move-right-btn은 kebob case 라고 함(-사용)
+
+* 간편 명령어
+```html
+div{div$}*num
+```
+아래 그림 참조
+
+![image](https://user-images.githubusercontent.com/107795925/177736217-866fe06f-de70-405f-9146-3be6f79767fe.png)
+
+-------------------------------------------------------------------------------------
+
+* 20220708
+
+![image](https://user-images.githubusercontent.com/107795925/177956558-f841a025-890f-46fd-965d-07795534c8a7.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956695-ac77cc44-c1d7-4b88-b614-d1f1e6e2ad88.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956754-7314056d-11a9-4d97-943c-b614735c1508.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956815-eeeb81ff-73a4-4d9c-8450-4193c8c30677.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956858-1edda7c9-6774-4339-b9e4-33b1fe65b9fb.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956908-1960e982-2889-433f-91bf-01eb92aff6ef.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956947-5261dcf8-7369-4bec-a8fc-5ed637e110ca.png)
+
+![image](https://user-images.githubusercontent.com/107795925/177956977-72765988-7c3a-4a18-8eb0-a86632a9d08d.png)
