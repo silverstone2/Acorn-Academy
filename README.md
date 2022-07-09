@@ -1,5 +1,7 @@
 # HTML, CSS, JAVASCRIPT
 
+* 자세한 실습예제는 acorn202206 repo 참조
+
 ## HTML
 
 - html은 markup 언어(꺽쇄를 열고 닫는 것)
@@ -93,7 +95,7 @@
 
 ### 20220701
             
-##### html, css, javascript
+##### javascript
 
 * form 요소 - 서버에 전송할 양식을 일컫는다.
 - form action 속성 : 입력한 내용이 어디로 보내지는지를 설명해주며 작성은 action="서버에 전송할 경로" / 단, 웹서버가 존재해야 웹브라우저에서 실행이 가능하다
@@ -571,3 +573,5 @@ div{div$}*num
 ![image](https://user-images.githubusercontent.com/107795925/177956947-5261dcf8-7369-4bec-a8fc-5ed637e110ca.png)
 
 ![image](https://user-images.githubusercontent.com/107795925/177956977-72765988-7c3a-4a18-8eb0-a86632a9d08d.png)
+
+Step03부터는 acorn202206_javascript repo 참조하여 예제 돌리고 공부진행하기
