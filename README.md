@@ -1,7 +1,5 @@
 # HTML, CSS, JAVASCRIPT
-
-* 자세한 실습예제는 acorn202206 repo 참조
-
+-----------------
 ## HTML
 
 - html은 markup 언어(꺽쇄를 열고 닫는 것)
