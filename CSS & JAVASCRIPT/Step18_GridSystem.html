@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step18_GridSystem.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="bg-secondary">Grid Test</h1>
+        <div class="row">
+            <div class="col">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe molestiae deleniti ex sit atque quos sapiente, quasi numquam magni, iste ea quibusdam, voluptatem nostrum libero. Illum natus quod autem harum?</p>
+            </div>
+            <div class="col">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At esse dolorem aut doloremque cum. Iusto id fugit nam laboriosam blanditiis pariatur beatae ullam quo rem, unde quod nemo delectus. Illum.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, vel. Quas, enim magni quis, fugit, reiciendis nulla animi velit laborum nesciunt est ad! Quis aliquid nulla veniam, est doloribus nemo?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, vel. Quas, enim magni quis, fugit, reiciendis nulla animi velit laborum nesciunt est ad! Quis aliquid nulla veniam, est doloribus nemo?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, vel. Quas, enim magni quis, fugit, reiciendis nulla animi velit laborum nesciunt est ad! Quis aliquid nulla veniam, est doloribus nemo?</p>
+            </div>
+        </div>
+        <h3>반응형 이미지</h3>
+        <div class="row" data-masonry='{"percentPosition": true }'>
+            <!--
+                masonry는 애니메이션과 함께 반응하는 명령어
+            -->
+            <div class="col-md-6 col-lg-3">
+                <!--
+                    col-md-6(폭을 결정하는 숫자임) col-lg-3
+                    col-1 : 1/12 = 8.3%
+                    12가 max이고 1 올라갈때마다 8.3%더하면 됨
+                -->
+                <img class="img-fluid" src="images/image1.png" >
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img class="img-fluid" src="images/image2.png" >
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img class="img-fluid" src="images/image3.png" >
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <img class="img-fluid" src="images/image4.png" >
+            </div>
+
+            <!--
+                column에 조합되는 단어 6개
+                breakpoint 범위!(폭에 대한 단위)
+
+
+                extra small                 none                < 576px
+                small                       sm                  >= 576px
+                medium                      md                  >= 768px
+                large                       lg                  >= 992px
+                extra large                 xl                  >= 1200px
+                extra extra large           xxl                 >= 1400px
+
+
+                위의 범위에 대한 단위가 추가되면 조건부로 실행이 된다.
+
+                div class="col-6 col-sm-3"
+                위와 같이 둘다 존재하면 sm이 이김. 하지만 폭의 넓이에 따라서 적용되는게 달라진다
+                폭이 576보다 크면 sm이 이기고 반대의 경우는 col-6이 이김.
+
+                즉 css는 구체성이 같다면 나중에 정의된 것이 우선순위가 높음.
+                media 쿼리에서 적용이 된다면 무조건적으로 적용이 되는 것이 아니고 조건부로 조건이 충족됐을 때 적용이 된다.
+                * Step13_CssWeight.html & Step13_CssWeight.html2 참조할 것! 
+
+
+                fluid는 무조건 100%를 다쓴다!
+
+
+                mx => margin x축(좌우 마진을 건드릴때)
+                my => margin y축(상하 마진을 건드릴때)
+            -->
+        </div>
+    </div>
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+</body>
+</html>
