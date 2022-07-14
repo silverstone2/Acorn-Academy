@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example9.html</title>
+</head>
+<body>
+    <button id="myBtn">눌러보셈</button>
+    <p id="result"></p>
+
+    <button id="myBtn2">눌러보셈2</button>
+    <p id="result2"></p>
+    <script>
+        /*
+            버튼을 눌렀을 때 0 또는 1 또는 2의 숫자를 랜덤하게 얻어내서 얻어낸 숫자를 p요소의 innerText로 출력
+        */  
+       document.querySelector("#myBtn").addEventListener("click", function(){
+            // 0~2 사이의 랜덤한 정수를 얻어낸다.
+            let num = Math.floor(Math.random()*3);
+            // p요소의 innerText로 출력하기
+            document.querySelector("#result").innerText = num;
+       });
+       
+      /*
+       document.querySelector("#myBtn").addEventListener("click", function(){
+        document.querySelector("#result").innerText = Math.floor(Math.random()*3);
+       });
+       */
+
+        /*
+            눌러보셈2 버튼을 눌렀을 때 가위, 바위 보 중의 하나의 문자열을 랜덤하게 innerText로 출력
+        */
+
+        document.querySelector("#myBtn2").addEventListener("click", function(){
+            let hand = ["가위", "바위", "보"];
+            // 0~2 사잉의 랜덤한 정수를 얻어낸다.
+            let num = Math.floor(Math.random()*3);
+            // hand 배열에서 num의 인덱스에 해당하는 문자열을 p요소의 innerText로 출력한다.
+            document.querySelector("#result2").innerText = hand[num];
+        });
+    </script>
+</body>
+</html>
