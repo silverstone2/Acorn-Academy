@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example11.html</title>
+</head>
+<body>
+    <h3>가위 ㅇ바위 보 게임</h3>
+    <select id="mySelect">
+        <option value="">나 :선택</option>
+        <option value="0">나 : 가위</option>
+        <option value="1">나 : 바위</option>
+        <option value="2">나 : 보</option>
+    </select>
+    <strong>vs</strong>
+    <select id="comSelect">
+        <option value="">com :</option>
+        <option value="0">com : 가위</option>
+        <option value="1">com : 바위</option>
+        <option value="2">com : 보</option>
+    </select>
+    <p id="result"></p>
+    <script>
+        /*
+            Step02_example9.html을 참고해서 가위바위보 게임을 완성시켜보세요.
+            슬러시 p요소에 승패여부를 출력시키세요.
+        */
+        document.querySelector("#mySelect").addEventListener("change", function(){
+            let me = document.querySelector("#mySelect").value;
+
+            let ran = Math.floor(Math.random()*3);
+            document.querySelector("#comSelect").value = ran;
+            com = document.querySelector("#comSelect").value;
+                
+            if(me == 0){
+                if(com == 0){
+                    document.querySelector("#result").innerText="비겼습니다";
+                }
+                else if(com == 1) {
+                    document.querySelector("#result").innerText="졌습니다";
+                }
+                else if(com == 2){
+                    document.querySelector("#result").innerText="이겼습니다";
+                }
+            }
+            else if(me == 1){
+                if(com == 0){
+                    document.querySelector("#result").innerText="이겼습니다";
+                }
+                else if(com == 1){
+                    document.querySelector("#result").innerText="비겼습니다";
+                }
+                else if(com == 2) {
+                    document.querySelector("#result").innerText="졌습니다";
+                }
+            }
+            else if(me == 2){
+                if(com == 0) {
+                    document.querySelector("#result").innerText="졌습니다";
+                }
+                else if(com == 1){
+                    document.querySelector("#result").innerText="이겼습니다";
+                }
+                else if(com == 2){
+                    document.querySelector("#result").innerText="비겼습니다";
+                }
+            };    
+        });
+
+        /*
+            선생님 코드
+
+            - select 요소에 change 이벤트가 일어났을 때 실행할 함수등록
+            document.querySeletor("#mySelet").addEventListener("change", function(){
+                //선택한 value값 읽어오기 "0" or "1" or "2"
+                let value = documnet.querySelector("#mySelect").value;
+                // "0" or "1" or "2" 중 랜덤한 숫자 얻어내기
+                let ranNum = Math.floor(Math.random()*3);
+                // 랜덤한 숫자를 com의 select의 value로 넣어주기
+                document.querySelector("#comSelect").value=ranNum;
+
+                //비긴경우 
+                if(value == ranNum) {
+                     document.querySelector("#result").innerText="비겼습니다";
+                }
+            
+            });
+        */
+    </script>
+</body>
+</html>

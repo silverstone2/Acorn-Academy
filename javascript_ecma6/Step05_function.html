@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_function.html</title>
+</head>
+<body>
+    <script>
+        // 함수에 선언된 매개변수의 기본값(default)을 지정할 수 있다.
+        function showInfo(num=0, name="who?", addr="where?"){
+            console.log(num+" | "+name+" | "+addr);
+        };
+
+        showInfo(1, "김구라", "노량진");
+        showInfo(); // 아무 값도 적지 않으면 undefined가 출력되며 자바스크립트에서는 undefined도 데이터값임
+        
+        function useFunc(...args){ // args는 빈 배열을 전달하고 값을 입력할때마다 순차적으로 배열에 전달됨
+            console.log(args);
+        }
+
+        useFunc();
+        useFunc(10);
+        useFunc(10,20,30);
+        useFunc(10,"kim", true);
+    </script>
+</body>
+</html>

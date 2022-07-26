@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_event3.html</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myDiv"></div>
+    <script>
+            document.querySelector("#myDiv").addEventListener("mousedown", function(){
+                document.querySelector("#myDiv").style.backgroundColor="yellow";
+            });
+            
+
+            document.querySelector("#myDiv").addEventListener("mouseup", function(){
+                document.querySelector("#myDiv").style.backgroundColor="white";
+            });
+
+            /*
+            document.querySelector("#myDiv").addEventListener("mousemove", function(e){
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                document.querySelector("#myDiv").innerText="X좌표 : "+ mouseX + ", Y좌표 : " + mouseY;
+            });
+            */
+            
+            document.querySelector("#myDiv").addEventListener("mousemove", function(e){
+                console.log("mousemove!");
+                console.log(e);
+                // 출력할 정보 구성하기
+                let info = "x좌표: "+e.offsetX+", y좌표: "+e.offsetY;
+                // div의 innerText로 출력하기
+                document.querySelector("#myDiv").innerText=info;
+
+            }); 
+            
+            // 2개의 매개변수가 선언된 함수
+            // 첫번째로 string타입의 함수가 호출되고 두번째 function타입이 있으면 function타입은 알아서 호출이 됨. 함수의 매개변수로 우리가 필요한 값까지 전달
+            // 즉 함수를 전달하면서 동작을 전달하는 꼴임.
+            function callMe(eventName, callback){
+                console.log("이벤트명:"+eventName);
+                // callback 함수를 호출하면서 전달할 object
+                let obj={num:1, name:"김구라"};
+                // callback에 전달된 data type은 함수이므로 호출할 수 있다.
+                callback(obj);
+            };
+
+            callMe("배고파", function(a){
+                alert(a.name);
+            });
+    </script>
+</body>
+</html>
