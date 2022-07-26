@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_form2.html</title>
+    <style>
+        #comment{
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+    </head>
+<body>
+    <h1>회원 가입 폼입니다.</h1>
+    <form action="signup.jsp">
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email"><br>
+        <!--
+            fieldset, legend 요소가 왜 필요한지와 label 텍스트를 제공하는 새로운 방법을 익히세요
+            input type="radio"에서 name 속성의 값과 같으면 같은 그룹으로 묶입니다.
+        -->
+        <fieldset>
+            <legend>성별 정보 선택</legend>
+            <label>
+                <input type="radio" name="gender" value="man" checked> 남자
+            </label>
+            <label>
+                <input type="radio" name="gender" value="woman"> 여자
+                <!--name속성의 value가 같으면 같은 그룹으로 묶이게 됨(같은 그룹으로 바뀌면 된다고 봐도 동일함)-->
+                <!--radio의 경우에는 따로 지정된 value값이 없으면 웹서버로 정보 전송이 불가함-->
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>취미 정보 선택</legend>
+            <label>
+                <input type="checkbox" name="hobby" value="soccer" checked> 축구
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="baking"> 베이킹
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="piano"> 피아노
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="etc"> 기타
+            </label>
+            <!--checkbox는 name속성의 value가 같아도 같은 그룹이기는 하나 복수 선택이 가능함-->
+        </fieldset>
+
+        <label for="job">직업 선택</label>
+        <select name="job" id="job">
+            <option value="">선택</option>
+            <option value="programmer">프로그래머</option>
+            <option value="doctor">의사</option>
+            <option value="pianist">피아니스트</option>
+            <option value="etc">기타</option>
+        </select>
+        <br>
+        <label for="lunch">점심 선택</label>
+        <!--
+            option에 value가 없으면 innerText(요소 사이에 출력되는 text)가 전송된다
+            ex) 라면 쫄면 김밥 같은 한글로 적은 옵션을 뜻함
+        -->
+        <select name="lunch" id="lunch">
+            <optgroup label="분식">
+                <option>라면</option>
+                <option>쫄면</option>
+                <option>김밥</option>
+            </optgroup>
+            <optgroup label="중식">
+                <option>자장면</option>
+                <option>짬뽕</option>
+                <option>군만두</option>
+            </optgroup>
+        </select>
+        <br>
+        <label for="myFile">첨부파일</label>
+        <input type="file" id="myFile" name="myFile">
+        <!--
+            본래 웹브라우저는 보안성때문에 파일시스템에 접근하는 것을 제한하지만 file타입을 사용하면 첨부파일 선택이 가능
+        -->
+        <br>
+        <label for="comment">하고 싶은 말</label>
+        <br>
+        <textarea name="comment" id="comment"></textarea>
+        <br>
+        <button type="submit">가입</button>
+    </form>
+</body>
+</html>

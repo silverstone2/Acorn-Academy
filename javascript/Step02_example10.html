@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example10.html</title>
+</head>
+<body>
+
+    <!--
+        input, select 와 같은 속성들은 innerText의 값이 아닌 value의 값을 읽어들여옴
+        value의 값이 비어있으면 innerText가 value값이 됨
+    -->
+    <select id="mySelect">
+        <option value="">선택</option>
+        <option value="0">가위</option>
+        <option value="1">바위</option>
+        <option value="2">보</option>
+    </select>
+    <p id="my"></p>
+    <script>
+        document.querySelector("#mySelect").addEventListener("change", function(){
+            let value = document.querySelector("#mySelect").value;
+            document.querySelector("#my").innerText = value;
+        });
+    </script>
+</body>
+</html>

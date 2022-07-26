@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_variable.html</title>
+</head>
+<body>
+    <!--
+        구글에 ecma6치면 문법이 나옴
+        여기서 ecma6는 버전을 의미함
+    -->
+    <script>
+        // 예전에 변수를 선언하는 방식
+        var num = 10;
+
+        // ecma6부터 변수를 선언하는 방식
+        let num2 = 10;
+
+        if(true) {
+            // myNmae은 전역변수
+            var myName = "김구라";
+            // yourName은 if문 블럭 안에서만 사용할 수 있는 지역변수
+            let yourName = "원숭이";
+        }
+        
+        // 값을 변경하지 못하도록 상수화(constant) 시키기
+        // 값이 한 번 결정되면 바꿀 수 없음
+        const pi = 3.14159;
+    </script>
+</body>
+</html>
